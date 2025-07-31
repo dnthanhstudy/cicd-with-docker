@@ -1,0 +1,16 @@
+services:
+  demo-app:
+    container_name: demo
+    image: demo
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8123:8123"
+    networks:
+      - demo_default
+
+networks:
+  demo_default:
+    external: true
